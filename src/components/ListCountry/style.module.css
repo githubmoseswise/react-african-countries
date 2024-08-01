@@ -1,0 +1,9 @@
+.card_item{
+    padding: 50px;
+    gap:10px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
