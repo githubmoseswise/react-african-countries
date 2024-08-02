@@ -69,15 +69,25 @@
 
   /* Media Queries */
 @media (max-width: 768px) {
+  .radio_inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .radio_inputs {
-    font-size: 0.5rem; /* Ajuster la taille du texte pour les écrans plus petits */
+    font-size: 0.6rem; /* Ajuster la taille du texte pour les écrans plus petits */
   }
   
 }
 
 @media (max-width: 480px) {
+  .radio_inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .radio_inputs {
-    font-size: 0.4rem; /* Réduire encore la taille du texte pour les très petits écrans */
+    font-size: 0.5rem; /* Réduire encore la taille du texte pour les très petits écrans */
   }
   
 }
