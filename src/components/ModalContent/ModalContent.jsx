@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import Maps from "../Maps/Maps";
 import s from "./style.module.css";
@@ -10,7 +11,21 @@ function ModalContent({ countryItem, closeModal }) {
       <div className={s.modal}>
         <div className={s.modal_content}>
           {/* Ajout de la carte */}
-          {latlng && <Maps lat={latlng[0]} lon={latlng[1]} name={countryItem.name.common} />}
+          {latlng && (
+            <Maps
+              lat={latlng[0]}
+              lon={latlng[1]}
+              name={countryItem.name.common}
+            />
+          )}
+
+          <a
+            href={countryItem.maps.googleMaps}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className={s.info_btn}>Plus d'information</button>
+          </a>
 
           <p className={s.title}>
             Capital :<span className={s.subtitle}> {countryItem.capital}</span>
