@@ -67,6 +67,23 @@
   }
   
 
+
+  /* Styles pour la notification */
+.notification {
+  background-color: #ff4c4c;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+
+
   /* Media Queries */
 @media (max-width: 768px) {
   .radio_inputs{
@@ -90,4 +107,5 @@
     font-size: 0.5rem; /* Réduire encore la taille du texte pour les très petits écrans */
   }
   
+
 }

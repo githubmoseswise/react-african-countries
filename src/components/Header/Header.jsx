@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Tabs from "../Tabs/Tabs";
 import s from "./style.module.css";
-function Header({updateCountryClick, currentCountryData }) {
+function Header({updateCountryClick, currentCountryData, countryData }) {
   return (
     <div className={s.container}>
       <div className={s.container_title}>
@@ -21,6 +21,7 @@ function Header({updateCountryClick, currentCountryData }) {
       <Tabs
         updateCountryClick={updateCountryClick}
         currentCountryData={currentCountryData}
+        countryData={countryData}
       />
       {/* <p className={s.description}> Click on a card to reveal a country info</p> */}
     </div>
