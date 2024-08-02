@@ -1,5 +1,6 @@
 body{
     background-color: #230650;
+    overflow-x: hidden;
 }
 
 .container{
