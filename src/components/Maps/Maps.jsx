@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -15,14 +14,31 @@ function Maps({ lat, lon, name }) {
       attribution: "© OpenStreetMap",
     }).addTo(map);
 
-    // Ajoute un marqueur
-    L.marker([lat, lon]).addTo(map).bindPopup(name).openPopup();
+    // Ajouter un marqueur
+    L.marker([lat, lon])
+      .addTo(map)
+      .bindPopup(name)
+      .openPopup();
+
+    // Définir les coordonnées pour la surbrillance
+    const bounds = [
+      [lat , lon ], // Coordonnée sud-ouest
+      [lat , lon ], // Coordonnée nord-est
+    ];
+
+    // Ajouter une surbrillance avec un polygone
+    L.polygon(bounds, {
+      color: 'red', // Couleur de la bordure
+      weight: 2,    // Épaisseur de la bordure
+      fillColor: 'red', // Couleur de remplissage
+      fillOpacity: 0.2 // Opacité du remplissage
+    }).addTo(map);
 
     // Nettoyage de la carte lorsque le composant est démonté
     return () => {
       map.remove();
     };
-  }, [lat, lon]);
+  }, [lat, lon, name]);
 
   return <div id="map" className={s.map}></div>;
 }
