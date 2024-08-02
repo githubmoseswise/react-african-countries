@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { CountryAPI } from "./api/country.js";
 import Header from "./components/Header/Header.jsx";
@@ -6,26 +7,36 @@ import s from "./global.module.css";
 
 function App() {
   const [countryData, setCountryData] = useState(null);
-  async function fetchContry() {
-    const country = await CountryAPI.fetchRegion("Afric");
+  const [currentCountry, setCurrentCountry] = useState("Africa");
+
+  console.log(currentCountry);
+  const updateCountry = (currentCountryData) => {
+    setCurrentCountry(currentCountryData);
+  };
+
+  async function fetchCountry(currentCountry) {
+    const country = await CountryAPI.fetchRegion(currentCountry);
     if (country.length > 0) {
       setCountryData(country);
     }
   }
 
   useEffect(() => {
-    fetchContry();
-  }, []);
+    fetchCountry(currentCountry);
+  }, [currentCountry]);
 
   return (
     <div className={s.container}>
       <div className={s.header}>
-        <Header  countryData={countryData}/>
+        <Header
+          countryData={countryData}
+          currentCountryData={currentCountry}
+          updateCountryClick={updateCountry}
+        />
       </div>
 
       <div className={s.container_country}>
         {countryData && <ListCountry countryData={countryData} />}
-
       </div>
     </div>
   );

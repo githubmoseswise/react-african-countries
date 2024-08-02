@@ -3,7 +3,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #f1f1f1;
+    color: black;
 }
+
+.container::after{
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #ffffff 0%, #ffffff 100% );
+  transform: translate3d(0, 0, 0) scale(0.2);
+  filter: blur(25px);
+}
+
+
+
 
 .container_title{
     display: flex;
@@ -18,7 +38,7 @@
     margin-left: 10px;
     font-weight: 700;
     font-family: Roboto;
-    color: white;
+    color: black;
 }
 
 
