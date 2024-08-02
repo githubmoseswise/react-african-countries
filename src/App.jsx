@@ -9,7 +9,7 @@ function App() {
   const [countryData, setCountryData] = useState(null);
   const [currentCountry, setCurrentCountry] = useState("Africa");
 
-  console.log(currentCountry);
+  console.log(countryData);
   const updateCountry = (currentCountryData) => {
     setCurrentCountry(currentCountryData);
   };

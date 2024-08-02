@@ -36,6 +36,12 @@ function ModalContent({ countryItem, closeModal }) {
             Times Zone :
             <span className={s.subtitle}> {countryItem.timezones[0]}</span>
           </p>
+          <p className={s.title}>
+            Prefixe :
+            <span className={s.subtitle}>
+              {countryItem.idd.root} {countryItem.idd.suffixes}
+            </span>
+          </p>
         </div>
         <button className={s.button} onClick={closeModal}>
           X
