@@ -1,5 +1,5 @@
 .container{
-    padding: 20px;
+    padding: 20px 0px 50px 50px;
 }
 
 
@@ -9,7 +9,7 @@
     border-radius: 0.5rem;
     background-color:#230650;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 12px;
     width: 100%;
     padding: 1rem 1rem 0 1rem;
     color: white;
@@ -66,3 +66,18 @@
     box-shadow: 3px 3px 0px 3px #e8e8e8;
   }
   
+
+  /* Media Queries */
+@media (max-width: 768px) {
+  .radio_inputs {
+    font-size: 0.5rem; /* Ajuster la taille du texte pour les écrans plus petits */
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .radio_inputs {
+    font-size: 0.4rem; /* Réduire encore la taille du texte pour les très petits écrans */
+  }
+  
+}
