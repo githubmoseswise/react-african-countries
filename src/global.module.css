@@ -10,6 +10,7 @@ body{
     flex-direction: column;
     margin: auto;
     padding-top: 150px;
+    overflow-x: hidden;
 }
 
 .header{
