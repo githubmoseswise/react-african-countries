@@ -1,15 +1,17 @@
 /* eslint-disable react/prop-types */
+import Maps from "../Maps/Maps";
 import s from "./style.module.css";
 
 function ModalContent({ countryItem, closeModal }) {
-  {
-    console.log("***", countryItem);
-  }
+  const { latlng } = countryItem;
 
   return (
     <div className={s.container}>
       <div className={s.modal}>
         <div className={s.modal_content}>
+          {/* Ajout de la carte */}
+          {latlng && <Maps lat={latlng[0]} lon={latlng[1]} name={countryItem.name.common} />}
+
           <p className={s.title}>
             Capital :<span className={s.subtitle}> {countryItem.capital}</span>
           </p>
