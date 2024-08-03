@@ -23,6 +23,7 @@ function Header({updateCountryClick, currentCountryData, countryData }) {
         currentCountryData={currentCountryData}
         countryData={countryData}
       />
+      
       {/* <p className={s.description}> Click on a card to reveal a country info</p> */}
     </div>
   );

@@ -5,6 +5,7 @@ const countries = [
   "Oceania",
   "South America",
   "North America",
+  "Americas"
 ];
 
 export { countries };
