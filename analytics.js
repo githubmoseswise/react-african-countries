@@ -1,6 +1,7 @@
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
-ReactGA.initialize('G-3FEPC8F302');
+// Remplacez 'UA-XXXXXXXXX-X' par votre ID de suivi
+ReactGA.initialize("GTM-TCNLXZ7H");
 
 export const logPageView = () => {
   ReactGA.set({ page: window.location.pathname });

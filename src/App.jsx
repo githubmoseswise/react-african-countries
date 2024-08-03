@@ -1,15 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, useRef } from "react";
+import ReactGA from 'react-ga4';
+
 import { CountryAPI } from "./api/country.js";
 import Header from "./components/Header/Header.jsx";
 import ListCountry from "./components/ListCountry/ListCountry.jsx";
 import s from "./global.module.css";
-import { logPageView } from '../analytics.js'; // Importez votre configuration Google Analytics
+import initializeGA from "./ga4.js"; // Importer la fonction d'initialisation Google Analytics
 
 
+// Initialiser Google Analytics
+initializeGA();
 function App() {
-
-
   const [countryData, setCountryData] = useState(null);
   const [currentCountry, setCurrentCountry] = useState("Africa");
   const [search, setSearch] = useState("");
@@ -18,8 +20,9 @@ function App() {
 
   const cardRef = useRef(null);
 
-  console.log("sea", shouldSearch);
-  console.log("search", search);
+
+
+
   const updateSearch = (name) => {
     setSearch(name);
     setShouldSearch(true);
@@ -44,9 +47,10 @@ function App() {
     }
   }
 
-  
+
   useEffect(() => {
-    logPageView(); // Log la vue de la page actuelle
+    // Enregistrez une vue de page lors du chargement de la page
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
   }, []);
 
 
