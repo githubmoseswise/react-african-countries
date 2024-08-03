@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Tabs from "../Tabs/Tabs";
 import s from "./style.module.css";
-function Header({updateCountryClick, currentCountryData, countryData }) {
+function Header({ updateCountryClick, currentCountryData, countryData }) {
   return (
     <div className={s.container}>
       <div className={s.container_title}>
@@ -12,18 +12,19 @@ function Header({updateCountryClick, currentCountryData, countryData }) {
           <div className={s.paper}></div>
           <div className={s.keyboard}></div>
         </div>
-        <p className={s.title}> African Contries Data</p>
+        <p className={s.title}> All Countries Data</p>
       </div>
 
       {/* <h1 className={s.description}>
         African countries : {countryData && countryData.length} countries
       </h1> */}
+
       <Tabs
         updateCountryClick={updateCountryClick}
         currentCountryData={currentCountryData}
         countryData={countryData}
       />
-      
+
       {/* <p className={s.description}> Click on a card to reveal a country info</p> */}
     </div>
   );
